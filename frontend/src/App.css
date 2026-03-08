@@ -1,0 +1,344 @@
+.verses-container {
+    width: 100%;
+    padding: 40px 30px;
+    background-color: #F8F5E9;
+    min-height: 60vh;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.verse-item {
+    line-height: 2;
+    font-size: 1.15rem;
+    color: #1f1f1f;
+    margin-bottom: 20px;
+    padding: 0;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, padding 0.2s ease;
+}
+
+.verse-item.highlighted {
+    background-color: #E8DFC9;
+    padding: 12px 15px;
+    margin-left: -15px;
+    margin-right: -15px;
+    border-left: 3px solid #8B6F47;
+}
+
+.verse-item sup {
+    font-weight: bold;
+    color: #1f1f1f;
+    font-size: 0.7rem;
+    margin-right: 10px;
+    vertical-align: super;
+}
+
+.verse-text {
+    text-align: justify;
+    color: #1f1f1f;
+}
+
+h4.chapter-title {
+    color: #1f1f1f;
+    border-bottom: 1px solid #d4c4a8;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #5a5a5a;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-primary {
+    background-color: #8B6F47;
+    border-color: #8B6F47;
+}
+
+.btn-primary:hover {
+    background-color: #6d5638;
+    border-color: #6d5638;
+}
+
+/* Search result alert */
+.search-result-alert {
+    background-color: #F8F5E9;
+    border: 1px solid #8B6F47;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #1f1f1f;
+}
+
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Custom scrollbar for verses list */
+.form-select {
+    border-radius: 6px;
+    border: 1px solid #d4c4a8;
+    background-color: #F8F5E9;
+    color: #1f1f1f;
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    padding-right: 2.5rem;
+}
+
+.form-select:focus {
+    border-color: #8B6F47;
+    box-shadow: 0 0 0 0.2rem rgba(139, 111, 71, 0.25);
+    background-color: #F0EBE0;
+    outline: none;
+}
+
+.form-select:active {
+    background-color: #F0EBE0;
+    border-color: #8B6F47;
+}
+
+.form-select option {
+    background-color: #F8F5E9;
+    color: #1f1f1f;
+    padding: 10px;
+}
+
+/* Dropdown row spacing */
+.row.mb-4 {
+    margin-bottom: 30px !important;
+}
+
+/* Button styling */
+.btn-outline-secondary {
+    border-color: #8B6F47;
+    color: #8B6F47;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #8B6F47;
+    color: white;
+}
+
+/* Make dropdowns more elegant */
+select.form-select {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+}
+
+/* Container padding */
+.container-fluid {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* Loading spinner */
+.spinner-border {
+    color: #8B6F47;
+}
+
+/* Navigation buttons at bottom - centered */
+.navigation-buttons {
+    padding: 25px 0;
+    margin-top: auto;
+    background-color: #F8F5E9;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.nav-buttons-group {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-buttons-group .btn {
+    flex: 1;
+    padding: 12px 20px;
+}
+
+.nav-buttons-group .btn-primary {
+    max-width: 250px;
+    font-weight: 600;
+    background-color: #8B6F47;
+    border-color: #8B6F47;
+}
+
+/* Mobile responsive - 350px breakpoint */
+@media (max-width: 400px) {
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .row.mb-4 > div {
+        margin-bottom: 15px;
+    }
+    
+    .verses-container {
+        padding: 20px 15px;
+    }
+    
+    .verse-item {
+        font-size: 1rem;
+    }
+    
+    /* Navigation buttons on mobile */
+    .nav-buttons-group {
+        max-width: 100%;
+    }
+    
+    .nav-buttons-group .btn {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    
+    .nav-buttons-group .btn-primary {
+        max-width: 150px;
+    }
+}
+
+/* Ensure proper spacing on small screens */
+@media (max-width: 768px) {
+    .navigation-buttons {
+        margin-top: 20px;
+    }
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.toggle-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #8B6F47;
+    background-color: #F8F5E9;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-btn.active {
+    background-color: #2d2d2d;
+    border-color: #555;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.container-fluid.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.container-fluid.dark-mode .form-label {
+    color: #b0b0b0;
+}
+
+.container-fluid.dark-mode .form-select {
+    background-color: #2d2d2d;
+    border-color: #555;
+    color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23aaa' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+}
+
+.container-fluid.dark-mode .form-select:focus {
+    background-color: #3d3d3d;
+    border-color: #8B6F47;
+    color: #ffffff;
+}
+
+.container-fluid.dark-mode .form-select:active {
+    background-color: #3d3d3d;
+    border-color: #8B6F47;
+}
+
+.container-fluid.dark-mode .form-select option {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.container-fluid.dark-mode .verses-container {
+    background-color: #1a1a1a;
+}
+
+.container-fluid.dark-mode .verse-item {
+    color: #e0e0e0;
+}
+
+.container-fluid.dark-mode .verse-item sup {
+    color: #e0e0e0;
+}
+
+.container-fluid.dark-mode .verse-text {
+    color: #e0e0e0;
+}
+
+.container-fluid.dark-mode .chapter-title {
+    color: #ffffff;
+    border-bottom-color: #555;
+}
+
+.container-fluid.dark-mode .search-result-alert {
+    background-color: #2d2d2d;
+    border-color: #8B6F47;
+    color: #ffffff;
+}
+
+.container-fluid.dark-mode .btn-close {
+    filter: invert(0) grayscale(100%) brightness(200%);
+}
+
+.container-fluid.dark-mode .btn-outline-secondary {
+    border-color: #8B6F47;
+    color: #8B6F47;
+}
+
+.container-fluid.dark-mode .btn-outline-secondary:hover {
+    background-color: #8B6F47;
+    color: #ffffff;
+}
+
+.container-fluid.dark-mode .navigation-buttons {
+    background-color: #1a1a1a;
+}
+
+.container-fluid.dark-mode .spinner-border {
+    border-color: rgba(139, 111, 71, 0.2);
+    border-top-color: #8B6F47;
+}
+
+/* Highlighted verse in dark mode */
+.container-fluid.dark-mode .verse-item.highlighted {
+    background-color: #3d3d3d;
+    border-left: 3px solid #8B6F47;
+}
+

@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #2e2e2e;
+    font-family: "Lora", serif;
+}
+
+body {
+    background-color: #F8F5E9;
+    min-height: 100vh;
+}
+
+p {
+  font-family: "Inter", serif;
+}
+
+/* Dark mode styles for body */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
