@@ -8,6 +8,11 @@ const rateLimit = require('express-rate-limit')
 const cookieParser = require('cookie-parser')
 
 const app = express()
+
+// VERY IMPORTANT for Render / Netlify deployments
+app.set('trust proxy', 1)
+
+
 const port = process.env.PORT || 3000
 
 // Security middleware
