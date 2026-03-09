@@ -39,13 +39,20 @@ app.use('/bible/', limiter)
 app.use(cors({
   origin: function(origin, callback) {
     // Allow requests with no origin (like mobile apps or curl requests)
-    // In production, replace with your actual domain
+    // In production, replace with your actual domains
     const allowedOrigins = [
       'http://localhost:5173', 
       'http://localhost:3000',
       'https://bible-app-xnhd.onrender.com'
     ]
-    if (!origin || allowedOrigins.includes(origin)) {
+    // Allow all Netlify domains for frontend deployment
+    const netlifyDomains = ['.netlify.app', 'netlify.app']
+    
+    if (!origin) {
+      callback(null, true)
+    } else if (allowedOrigins.includes(origin)) {
+      callback(null, true)
+    } else if (netlifyDomains.some(domain => origin.includes(domain))) {
       callback(null, true)
     } else {
       callback(new Error('Not allowed by CORS'))
