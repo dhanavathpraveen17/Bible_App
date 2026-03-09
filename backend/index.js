@@ -43,7 +43,9 @@ app.use(cors({
     const allowedOrigins = [
       'http://localhost:5173', 
       'http://localhost:3000',
-      'https://bible-app-xnhd.onrender.com'
+      'https://bible-app-xnhd.onrender.com',
+      'https://kjv-bible.com',
+      'https://www.kjv-bible.com'
     ]
     // Allow all Netlify domains for frontend deployment
     const netlifyDomains = ['.netlify.app', 'netlify.app']
