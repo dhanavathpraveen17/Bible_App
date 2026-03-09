@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'
 
+// API URL - uses environment variable in production, localhost in development
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
 // Bible books array
 const BOOKS = [
   "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua",
@@ -293,7 +296,7 @@ function App({ darkMode: propDarkMode, toggleDarkMode: propToggleDarkMode }) {
       } else {
         // Try API search as fallback
         try {
-          const response = await fetch(`http://localhost:3000/bible/${encodeURIComponent(query)}`);
+const response = await fetch(`${API_URL}/bible/${encodeURIComponent(query)}`);
           if (response.ok) {
             const data = await response.json();
             if (data.verses && data.verses.length > 0) {
@@ -332,7 +335,7 @@ function App({ darkMode: propDarkMode, toggleDarkMode: propToggleDarkMode }) {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`http://localhost:3000/bible/${selectedBook}/${selectedChapter}`);
+const response = await fetch(`${API_URL}/bible/${selectedBook}/${selectedChapter}`);
       const data = await response.json();
       if (data.verses) {
         setVerses(data.verses);

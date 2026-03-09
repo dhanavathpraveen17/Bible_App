@@ -40,7 +40,11 @@ app.use(cors({
   origin: function(origin, callback) {
     // Allow requests with no origin (like mobile apps or curl requests)
     // In production, replace with your actual domain
-    const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000']
+    const allowedOrigins = [
+      'http://localhost:5173', 
+      'http://localhost:3000',
+      'https://bible-app-xnhd.onrender.com'
+    ]
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true)
     } else {
