@@ -123,6 +123,7 @@ function App({ darkMode: propDarkMode, toggleDarkMode: propToggleDarkMode }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState(null);
   const [isHighlighted, setIsHighlighted] = useState(false);
+  const [buttonClicked, setButtonClicked] = useState(null);
 
   // Use props or fallback to local state if not provided
   const darkMode = propDarkMode !== undefined ? propDarkMode : false;
@@ -149,12 +150,12 @@ function App({ darkMode: propDarkMode, toggleDarkMode: propToggleDarkMode }) {
     }
   }, [verses]);
 
-  // Auto-remove highlight after 5 seconds
+  // Auto-remove highlight after 3 seconds
   useEffect(() => {
     if (isHighlighted) {
       const timer = setTimeout(() => {
         setIsHighlighted(false);
-      }, 5000);
+      }, 3000);
       return () => clearTimeout(timer);
     }
   }, [isHighlighted]);
@@ -384,7 +385,9 @@ const response = await fetch(`${API_URL}/bible/${selectedBook}/${selectedChapter
       }
     }
     setSelectedVerse(1);
+    setIsHighlighted(true);
     setSearchResults(null);
+    setButtonClicked('next');
   };
 
   const goToPreviousChapter = () => {
@@ -400,8 +403,20 @@ const response = await fetch(`${API_URL}/bible/${selectedBook}/${selectedChapter
       }
     }
     setSelectedVerse(1);
+    setIsHighlighted(true);
     setSearchResults(null);
+    setButtonClicked('prev');
   };
+
+  // Reset buttonClicked state after 3 seconds
+  useEffect(() => {
+    if (buttonClicked) {
+      const timer = setTimeout(() => {
+        setButtonClicked(null);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [buttonClicked]);
 
   return (
     <div className={`container-fluid p-4 ${darkMode ? 'dark-mode' : ''}`}>
@@ -516,7 +531,7 @@ const response = await fetch(`${API_URL}/bible/${selectedBook}/${selectedChapter
           <div className="col-12">
             <div className="btn-group nav-buttons-group">
               <button 
-                className="btn btn-outline-secondary"
+                className={`btn nav-btn ${buttonClicked === 'prev' ? 'clicked' : ''}`}
                 onClick={goToPreviousChapter}
               >
                 ← Previous
@@ -528,7 +543,7 @@ const response = await fetch(`${API_URL}/bible/${selectedBook}/${selectedChapter
                 {selectedBook} {selectedChapter}
               </button>
               <button 
-                className="btn btn-outline-secondary"
+                className={`btn nav-btn ${buttonClicked === 'next' ? 'clicked' : ''}`}
                 onClick={goToNextChapter}
               >
                 Next →

@@ -1,18 +1,27 @@
-.nav-container {
-  background-color: #8B6F47;
-  margin: 15px;
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-  padding: 15px 20px;
-  border-radius: 10px;
-  align-items: center;
-  height: auto;
-  min-height: 80px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  transition: background-color 0.3s ease;
+/* Navbar container */
+.custom-navbar {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+}
+
+.custom-navbar .nav-container {
+    background-color: #8B6F47;
+    margin: 15px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    align-items: center;
+    height: auto;
+    min-height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 1000;
 }
 
 /* Dark mode navbar */
@@ -176,15 +185,22 @@
         width: 100%;
         max-width: 100%;
         justify-content: center;
+        position: relative;
+        z-index: 1001;
     }
     
     .nav-search input {
         width: 100%;
         max-width: none;
         height: 44px;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        pointer-events: auto;
+        position: relative;
+        z-index: 1002;
     }
     
-    .btn-outline-light {
+    .nav-search button {
         height: 44px;
         padding: 8px 12px;
     }
@@ -217,6 +233,8 @@
     
     .nav-search {
         flex-wrap: nowrap;
+        position: relative;
+        z-index: 1001;
     }
     
     .nav-search input {
@@ -225,6 +243,11 @@
         padding: 8px 10px;
         flex: 1 1 auto;
         min-width: 120px;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        pointer-events: auto;
+        position: relative;
+        z-index: 1002;
     }
     
     .nav-search button {
@@ -267,6 +290,8 @@
         width: 100%;
         gap: 0;
         flex-wrap: nowrap;
+        position: relative;
+        z-index: 1001;
     }
     
     .nav-search input {
@@ -277,6 +302,11 @@
         min-width: 80px;
         border-radius: 4px 0 0 4px;
         border-right: none;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        pointer-events: auto;
+        position: relative;
+        z-index: 1002;
     }
     
     .nav-search button {

@@ -49,7 +49,7 @@ h4.chapter-title {
 
 .form-label {
     font-weight: 600;
-    color: #5a5a5a;
+    color: #8B6F47;
     font-family: 'Inter', sans-serif;
 }
 
@@ -125,6 +125,56 @@ h4.chapter-title {
 .btn-outline-secondary:hover {
     background-color: #8B6F47;
     color: white;
+}
+
+/* Fix button focus/active state persistence after click */
+.btn-outline-secondary:focus,
+.btn-outline-secondary:active,
+.btn-outline-secondary:focus-visible {
+    background-color: transparent !important;
+    color: #8B6F47 !important;
+    border-color: #8B6F47 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Navigation button base styles */
+.nav-btn {
+    border-color: #8B6F47;
+    color: #8B6F47;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #8B6F47;
+    color: white;
+}
+
+/* Dark mode nav button */
+.container-fluid.dark-mode .nav-btn {
+    border-color: #8B6F47;
+    color: #8B6F47;
+    background-color: transparent;
+}
+
+.container-fluid.dark-mode .nav-btn:hover {
+    background-color: #8B6F47;
+    color: #ffffff;
+}
+
+/* Button clicked state - changes to #8B6F47 */
+.nav-btn.clicked {
+    background-color: #8B6F47;
+    color: #F8F5E9;
+    border-color: #8B6F47;
+}
+
+/* Dark mode button clicked */
+.container-fluid.dark-mode .nav-btn.clicked {
+    background-color: #8B6F47;
+    color: #F8F5E9;
+    border-color: #8B6F47;
 }
 
 /* Make dropdowns more elegant */
