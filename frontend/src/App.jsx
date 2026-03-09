@@ -388,6 +388,16 @@ const response = await fetch(`${API_URL}/bible/${selectedBook}/${selectedChapter
     setIsHighlighted(true);
     setSearchResults(null);
     setButtonClicked('next');
+    
+    // Scroll to first verse
+    setTimeout(() => {
+      const firstVerse = document.getElementById('verse-1');
+      if (firstVerse) {
+        firstVerse.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      // Also scroll window to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
   };
 
   const goToPreviousChapter = () => {

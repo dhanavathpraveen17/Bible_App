@@ -392,3 +392,21 @@ body.dark-mode {
     border-left: 3px solid #8B6F47;
 }
 
+/* Controls hide/show functionality - only hide dropdowns, NOT navigation buttons */
+.controls-hidden .row.mb-4 {
+    display: none;
+}
+
+/* Navigation buttons should always be visible - remove the hide rule */
+/* .controls-hidden .navigation-buttons { */
+/*     display: none; */
+/* } */
+
+.dark-mode-toggle.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Show controls on scroll up - this is handled by JS state */
+
