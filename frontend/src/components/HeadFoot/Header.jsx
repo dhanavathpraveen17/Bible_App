@@ -16,7 +16,7 @@ function Header({ onSearch, darkMode }) {
   <div className="nav-container container-fluid d-flex justify-content-between align-items-center">
 
     <a className="navbar-brand text-white" href="#">
-      <img src="/src/assets/mainlogo.png"
+      <img src="/mainlogo.png"
            alt="Bible App Logo"
            className="navbar-logo" />
     </a>
