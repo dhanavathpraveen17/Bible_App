@@ -1,23 +1,74 @@
 {
-  "name": "Bible App - King James Version",
-  "short_name": "Bible App",
-  "description": "Read the King James Version (KJV) Bible online. Search and browse any book, chapter, and verse.",
+  "name": "KJV Bible - King James Version Online",
+  "short_name": "KJV Bible",
+  "description": "Read the King James Version (KJV) Bible online for free. Search verses, browse all 66 books. Mobile-friendly with dark mode.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F8F5E9",
   "theme_color": "#8B6F47",
   "orientation": "portrait-primary",
-  "categories": ["books", "reference", "lifestyle"],
+  "categories": ["books", "reference", "lifestyle", "religion"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "/favicon.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icon-512.png",
+      "src": "/favicon-512.png",
       "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-2048.png",
+      "sizes": "2048x2048",
       "type": "image/png",
       "purpose": "any maskable"
     }
@@ -29,7 +80,13 @@
       "short_name": "Search",
       "description": "Search for a specific verse",
       "url": "/?search=true"
+    },
+    {
+      "name": "Books",
+      "short_name": "Books",
+      "description": "Browse all 66 books of the Bible",
+      "url": "/books"
     }
-  ]
+  ],
+  "prefer_related_applications": false
 }
-

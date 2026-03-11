@@ -1,10 +1,20 @@
-# Robots.txt for Bible App
+# Robots.txt for KJV Bible
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://your-domain.com/sitemap.xml
+Sitemap: https://kjv-bible.com/sitemap.xml
 
-# Crawl-delay (optional, for polite crawling)
+# Crawl-delay for polite crawling
 Crawl-delay: 1
 
+# Block admin/private areas (if any)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+
+# Allow important paths
+Allow: /search
+Allow: /books
+Allow: /chapter
+Allow: /verse

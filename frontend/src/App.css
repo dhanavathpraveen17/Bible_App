@@ -76,13 +76,14 @@ h4.chapter-title {
     filter: invert(1) grayscale(100%) brightness(200%);
 }
 
-/* Custom scrollbar for verses list */
+/* Dropdown styling - prevents black flash */
 .form-select {
     border-radius: 6px;
     border: 1px solid #d4c4a8;
     background-color: #F8F5E9;
     color: #1f1f1f;
-    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    padding: 10px 12px;
+    font-size: 0.95rem;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -105,9 +106,10 @@ h4.chapter-title {
     border-color: #8B6F47;
 }
 
+/* Fix black flash - force background on options */
 .form-select option {
-    background-color: #F8F5E9;
-    color: #1f1f1f;
+    background-color: #F8F5E9 !important;
+    color: #1f1f1f !important;
     padding: 10px;
 }
 
@@ -175,12 +177,6 @@ h4.chapter-title {
     background-color: #8B6F47;
     color: #F8F5E9;
     border-color: #8B6F47;
-}
-
-/* Make dropdowns more elegant */
-select.form-select {
-    padding: 10px 12px;
-    font-size: 0.95rem;
 }
 
 /* Container padding */
@@ -312,27 +308,30 @@ body.dark-mode {
     color: #b0b0b0;
 }
 
+/* Dark mode dropdown - prevents black flash */
 .container-fluid.dark-mode .form-select {
-    background-color: #2d2d2d;
+    background-color: #2d2d2d !important;
     border-color: #555;
     color: #ffffff;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23aaa' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
 }
 
 .container-fluid.dark-mode .form-select:focus {
-    background-color: #3d3d3d;
+    background-color: #3d3d3d !important;
     border-color: #8B6F47;
     color: #ffffff;
+    box-shadow: 0 0 0 0.2rem rgba(139, 111, 71, 0.3);
 }
 
 .container-fluid.dark-mode .form-select:active {
-    background-color: #3d3d3d;
+    background-color: #3d3d3d !important;
     border-color: #8B6F47;
 }
 
+/* Fix black flash in dark mode - force background on options */
 .container-fluid.dark-mode .form-select option {
-    background-color: #2d2d2d;
-    color: #ffffff;
+    background-color: #2d2d2d !important;
+    color: #ffffff !important;
     padding: 10px;
 }
 
@@ -397,16 +396,9 @@ body.dark-mode {
     display: none;
 }
 
-/* Navigation buttons should always be visible - remove the hide rule */
-/* .controls-hidden .navigation-buttons { */
-/*     display: none; */
-/* } */
-
 .dark-mode-toggle.hidden {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
 }
-
-/* Show controls on scroll up - this is handled by JS state */
 

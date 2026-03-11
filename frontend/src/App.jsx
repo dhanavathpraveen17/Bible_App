@@ -124,6 +124,11 @@ function App({ darkMode: propDarkMode, toggleDarkMode: propToggleDarkMode }) {
   const [searchResults, setSearchResults] = useState(null);
   const [isHighlighted, setIsHighlighted] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(null);
+  
+  // Custom dropdown states
+  const [bookDropdownOpen, setBookDropdownOpen] = useState(false);
+  const [chapterDropdownOpen, setChapterDropdownOpen] = useState(false);
+  const [verseDropdownOpen, setVerseDropdownOpen] = useState(false);
 
   // Use props or fallback to local state if not provided
   const darkMode = propDarkMode !== undefined ? propDarkMode : false;
