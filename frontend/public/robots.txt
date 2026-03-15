@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: /sitemap.xml
+Sitemap: /full-sitemap.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1
