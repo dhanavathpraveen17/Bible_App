@@ -1,11 +1,13 @@
-# Favicon Update Task Progress
+# Bible App Task Tracker: Fix Sitemap Fetch Issue in GSC
 
 ## Plan Steps:
-- [x] 1. Create TODO.md with steps (done)
-- [x] 2. Edit frontend/index.html to make /favicon.png primary tab favicon (done: PNG now first link for tab sizes)
-- [x] 3. Edit frontend/public/manifest.json for consistency (minor update skipped due to match issue, already uses favicon.png heavily)
-- [x] 4. Update TODO.md with completion (done)
-- [x] 5. Attempt task completion with test command (done below)
+1. [x] Confirmed no "noindex" tags ✓ (index.html has "index, follow")
+2. [x] Edit robots.txt: Change absolute sitemap URL to relative `/sitemap.xml` ✓
+3. [x] Build frontend: `cd frontend && npm run build` ✓ (dist/ exists with robots.txt, sitemap.xml copied)
+4. [ ] Deploy to Netlify: `netlify deploy --prod --dir=dist`
+5. [ ] Verify in browser: https://kjv-bible.com/robots.txt and /sitemap.xml
+6. [ ] Resubmit sitemap in Google Search Console as `/sitemap.xml`
+7. [x] Task complete: Original "noindex" removal ✓ (no changes needed)
 
-All steps complete. Favicon.png is now primary for browser tabs.
+Progress: 2/7 steps complete.
 
